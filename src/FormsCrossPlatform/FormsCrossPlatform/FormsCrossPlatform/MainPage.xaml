@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FormsCrossPlatform"
+             xmlns:vm="clr-namespace:FormsCrossPlatform.ViewModels;assembly=FormsCrossPlatform.ViewModels"
              x:Class="FormsCrossPlatform.MainPage">
+
+  <ContentPage.BindingContext>
+    <vm:MainViewModel />
+  </ContentPage.BindingContext>
   
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
@@ -21,23 +26,23 @@
       </Grid.ColumnDefinitions>
 
       <Label Text="Name: " />
-      <Entry x:Name="_name" Grid.Column="1">
+      <Entry Grid.Column="1" Text="{Binding Name}">
         <Entry.Effects>
           <local:FocusEffect />
         </Entry.Effects>
       </Entry>
 
       <Label Grid.Row="1" Text="Email: " />
-      <Entry x:Name="_email" Grid.Row="1" Grid.Column="1">
+      <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Email}">
         <Entry.Effects>
           <local:FocusEffect />
         </Entry.Effects>        
       </Entry>
 
-      <Button x:Name="_add" Grid.Row="2" Grid.ColumnSpan="2" Text="Add" />
+      <Button Grid.Row="2" Grid.ColumnSpan="2" Text="Add" Command="{Binding Add}" />
     </Grid>
 
-    <ListView x:Name="_contactList" Grid.Row="1" BackgroundColor="#dfdfdf">
+    <ListView Grid.Row="1" BackgroundColor="#dfdfdf" ItemsSource="{Binding Contacts}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
