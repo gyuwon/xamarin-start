@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FormsCrossPlatform"
              x:Class="FormsCrossPlatform.MainPage">
+  
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+  </ContentPage.Padding>
 
   <Grid>
     <Grid.RowDefinitions>
@@ -17,15 +21,26 @@
       </Grid.ColumnDefinitions>
 
       <Label Text="Name: " />
-      <Entry Grid.Column="1" />
+      <Entry x:Name="_name" Grid.Column="1" />
 
       <Label Grid.Row="1" Text="Email: " />
-      <Entry Grid.Row="1" Grid.Column="1" />
+      <Entry x:Name="_email" Grid.Row="1" Grid.Column="1" />
 
-      <Button Grid.Row="2" Grid.ColumnSpan="2" Text="Add" />
+      <Button x:Name="_add" Grid.Row="2" Grid.ColumnSpan="2" Text="Add" />
     </Grid>
 
-    <ListView Grid.Row="1" BackgroundColor="#dfdfdf" />
+    <ListView x:Name="_contactList" Grid.Row="1" BackgroundColor="#dfdfdf">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Label Text="{Binding Name}" />
+              <Label Grid.Column="1" Text="{Binding Email}" />
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </Grid>
 
 </ContentPage>
