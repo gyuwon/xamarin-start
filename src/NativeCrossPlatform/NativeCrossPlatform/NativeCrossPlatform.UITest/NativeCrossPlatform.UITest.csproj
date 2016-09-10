@@ -69,6 +69,10 @@
       <Project>{1e1fb8a5-9ce3-4c80-9611-e9f21c21c4fd}</Project>
       <Name>NativeCrossPlatform.Droid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NativeCrossPlatform.iOS\NativeCrossPlatform.iOS.csproj">
+      <Project>{c844bae6-100e-4fa5-9dd7-6d04bb1185f8}</Project>
+      <Name>NativeCrossPlatform.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
