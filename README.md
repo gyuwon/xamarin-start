@@ -141,3 +141,37 @@ namespace NativeCrossPlatform.UITest
     }
 }
 ```
+
+### iOS
+
+```csharp
+using Foundation;
+using UIKit;
+
+namespace NativeCrossPlatform.iOS
+{
+    [Register ("AppDelegate")]
+    public class AppDelegate : UIApplicationDelegate
+    {
+        public override UIWindow Window {
+            get;
+            set;
+        }
+
+        public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
+        {
+#if DEBUG
+            Xamarin.Calabash.Start();
+#endif
+
+            return true;
+        }
+    }
+}
+```
+
+# Xamarin.Forms 크로스 플랫폼
+
+## 프로젝트 생성
+
+[File] -> [New] -> [Project] -> [Visual C#] -> [Cross-Platform] -> [Blank Xaml App (Xamarin.Forms Portable)]
