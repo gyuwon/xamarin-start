@@ -21,10 +21,18 @@
       </Grid.ColumnDefinitions>
 
       <Label Text="Name: " />
-      <Entry x:Name="_name" Grid.Column="1" />
+      <Entry x:Name="_name" Grid.Column="1">
+        <Entry.Effects>
+          <local:FocusEffect />
+        </Entry.Effects>
+      </Entry>
 
       <Label Grid.Row="1" Text="Email: " />
-      <Entry x:Name="_email" Grid.Row="1" Grid.Column="1" />
+      <Entry x:Name="_email" Grid.Row="1" Grid.Column="1">
+        <Entry.Effects>
+          <local:FocusEffect />
+        </Entry.Effects>        
+      </Entry>
 
       <Button x:Name="_add" Grid.Row="2" Grid.ColumnSpan="2" Text="Add" />
     </Grid>
