@@ -139,6 +139,10 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FormsCrossPlatform.ViewModels\FormsCrossPlatform.ViewModels.csproj">
+      <Project>{8e15a6ec-1600-4107-bb97-9726946bcfa4}</Project>
+      <Name>FormsCrossPlatform.ViewModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FormsCrossPlatform\FormsCrossPlatform.csproj">
       <Project>{09952504-DD43-4230-936B-914ACD560926}</Project>
       <Name>FormsCrossPlatform</Name>
