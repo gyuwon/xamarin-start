@@ -31,8 +31,8 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TapCounterService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
