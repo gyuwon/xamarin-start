@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>c844bae6-100e-4fa5-9dd7-6d04bb1185f8</ProjectGuid>
+    <ProjectGuid>{C844BAE6-100E-4FA5-9DD7-6D04BB1185F8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>NativeCrossPlatform.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
@@ -61,6 +61,10 @@
     <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Calabash, Version=19.2.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.TestCloud.Agent.0.19.2\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -135,6 +139,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
