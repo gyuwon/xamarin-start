@@ -115,6 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HockeyAppEventTracker.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PlatformFocusEffect.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

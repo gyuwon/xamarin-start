@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace FormsCrossPlatform.ViewModels
@@ -8,7 +9,7 @@ namespace FormsCrossPlatform.ViewModels
         private string _name;
         private string _email;
 
-        public MainViewModel()
+        public MainViewModel(IEventTracker tracker = null)
         {
             Contacts = new ObservableCollection<Contact>();
 
@@ -22,6 +23,8 @@ namespace FormsCrossPlatform.ViewModels
 
                 Name = string.Empty;
                 Email = string.Empty;
+
+                tracker?.TrackEvent("ContactAdded");
             });
         }
 

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using FormsCrossPlatform.ViewModels;
+using Xamarin.Forms;
 
 namespace FormsCrossPlatform
 {
@@ -7,6 +8,9 @@ namespace FormsCrossPlatform
         public MainPage()
         {
             InitializeComponent();
+
+            BindingContext = new MainViewModel(
+                DependencyService.Get<IEventTracker>());
         }
     }
 }

@@ -4,10 +4,6 @@
              xmlns:local="clr-namespace:FormsCrossPlatform"
              xmlns:vm="clr-namespace:FormsCrossPlatform.ViewModels;assembly=FormsCrossPlatform.ViewModels"
              x:Class="FormsCrossPlatform.MainPage">
-
-  <ContentPage.BindingContext>
-    <vm:MainViewModel />
-  </ContentPage.BindingContext>
   
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
