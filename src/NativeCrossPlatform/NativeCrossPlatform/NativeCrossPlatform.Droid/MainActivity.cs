@@ -1,35 +1,27 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.App;
 using Android.OS;
+using Android.Widget;
 
 namespace NativeCrossPlatform.Droid
 {
-	[Activity (Label = "NativeCrossPlatform.Droid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
-	{
-		int count = 1;
+    [Activity(Label = "NativeCrossPlatform.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        private readonly TapCounterService _service = new TapCounterService();
 
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
-			};
-		}
-	}
+            var button = FindViewById<Button>(Resource.Id.myButton);
+
+            button.Click += delegate
+            {
+                _service.OnTap();
+                button.Text = _service.Message;
+            };
+        }
+    }
 }
-
-
