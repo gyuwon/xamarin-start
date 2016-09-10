@@ -4,8 +4,28 @@
              xmlns:local="clr-namespace:FormsCrossPlatform"
              x:Class="FormsCrossPlatform.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Label Text="Name: " />
+      <Entry Grid.Column="1" />
+
+      <Label Grid.Row="1" Text="Email: " />
+      <Entry Grid.Row="1" Grid.Column="1" />
+
+      <Button Grid.Row="2" Grid.ColumnSpan="2" Text="Add" />
+    </Grid>
+
+    <ListView Grid.Row="1" BackgroundColor="#dfdfdf" />
+  </Grid>
 
 </ContentPage>
